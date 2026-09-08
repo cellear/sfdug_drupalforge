@@ -1,0 +1,29 @@
+uuid: dda8fc55-80cf-4fcd-97b2-0f569bc6f8b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.sfdug_meetings
+  module:
+    - system
+    - views
+  theme:
+    - sfdug
+id: sfdug_featured_session
+theme: sfdug
+region: hero
+weight: 0
+provider: null
+plugin: 'views_block:sfdug_meetings-block_featured'
+settings:
+  id: views_block_sfdug_meetings-block_featured
+  label: 'Featured session'
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: null
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

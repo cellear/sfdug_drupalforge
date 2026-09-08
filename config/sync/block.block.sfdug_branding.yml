@@ -1,0 +1,23 @@
+uuid: 5cf658a8-aa03-406a-b272-20e8953becf5
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - sfdug
+id: sfdug_branding
+theme: sfdug
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: Branding
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

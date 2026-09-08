@@ -1,0 +1,8 @@
+uuid: 5e503aee-0664-4f2b-bcbc-8ae7aa9f89fd
+langcode: en
+status: true
+dependencies: {  }
+id: footer-community
+label: 'Footer — Community'
+description: 'SFDUG footer links.'
+locked: false

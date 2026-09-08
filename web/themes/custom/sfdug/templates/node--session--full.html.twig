@@ -1,0 +1,95 @@
+{#
+/**
+ * @file
+ * Session detail page.
+ */
+#}
+<article{{ attributes.addClass('session-full') }}>
+  <div class="layout-with-sidebar">
+    <div>
+      {% if promo_url %}
+        <div class="promo">
+          <img src="{{ promo_url }}" alt="{{ node.label }}">
+        </div>
+      {% elseif video_url %}
+        <div class="session-full__video">
+          {{ include('sfdug:video-poster', {
+            url: video_url, thumbnail: thumbnail, title: node.label,
+          }, with_context = false) }}
+        </div>
+      {% endif %}
+
+      <div class="eyebrow">{{ month_label ?: 'Session'|t }}</div>
+      <span class="rule"></span>
+
+      {{ title_prefix }}
+      <h1{{ title_attributes.addClass('session-full__title') }}>{{ label }}</h1>
+      {{ title_suffix }}
+
+      {% if hook %}
+        <p class="talk-hook">{{ hook }}</p>
+      {% endif %}
+
+      {% if promo_url and video_url %}
+        <div class="session-full__video">
+          {{ include('sfdug:video-poster', {
+            url: video_url, thumbnail: thumbnail, title: node.label,
+          }, with_context = false) }}
+        </div>
+      {% endif %}
+
+      {% if content.body|render %}
+        <div class="prose">{{ content.body }}</div>
+      {% endif %}
+
+      {% if speakers %}
+        <div class="session-full__section">
+          <h3>{{ speakers|length > 1 ? 'Speakers'|t : 'Speaker'|t }}</h3>
+          <div class="speaker-chips">
+            {% for speaker in speakers %}
+              {{ include('sfdug:speaker-chip', speaker, with_context = false) }}
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if content.field_slides|render %}
+        <div class="session-full__section">
+          <h3>{{ 'Slides'|t }}</h3>
+          {{ content.field_slides }}
+        </div>
+      {% endif %}
+
+      {{ content|without(
+        'body',
+        'field_session_video',
+        'field_person_speakers',
+        'field_slides',
+        'field_social_media_card',
+        'field_short_description',
+        'field_session_date',
+        'field_rsvp_url',
+        'field_location',
+        'field_event_mode',
+        'field_accent_color',
+        'links'
+      ) }}
+    </div>
+
+    {% if details_rows %}
+      {% embed 'sfdug:details-card' with {
+        title: 'Meeting Details'|t,
+        rows: details_rows,
+        rsvp_url: rsvp_url,
+        rsvp_label: 'RSVP for free'|t,
+        addtocal_url: addtocal_url,
+      } only %}
+        {% block extra %}
+          {% if addtocal_url %}
+            <a class="addcal" href="{{ addtocal_url }}" target="_blank" rel="noopener">{{ '+ Add to calendar'|t }}</a>
+          {% endif %}
+        {% endblock %}
+      {% endembed %}
+    {% endif %}
+  </div>
+</article>

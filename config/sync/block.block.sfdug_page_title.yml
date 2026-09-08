@@ -1,0 +1,24 @@
+uuid: f7955d4a-38e9-4f27-8486-621870b17f43
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - sfdug
+id: sfdug_page_title
+theme: sfdug
+region: highlighted
+weight: -10
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '<front>'

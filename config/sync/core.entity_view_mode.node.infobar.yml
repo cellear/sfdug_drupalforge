@@ -1,0 +1,11 @@
+uuid: c597ae70-b297-4d59-a977-b792bd0604ad
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.infobar
+label: 'Info bar'
+description: null
+targetEntityType: node
+cache: true

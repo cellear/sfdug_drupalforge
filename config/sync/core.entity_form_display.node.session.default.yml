@@ -1,131 +1,67 @@
-uuid: 83ce1817-1ad7-44be-8660-cfa036876c59
+uuid: d8fcbea6-df67-47dc-a457-e9303d0b959b
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.session.field_audience
-    - field.field.node.session.field_description
-    - field.field.node.session.field_event
-    - field.field.node.session.field_is_non_session
-    - field.field.node.session.field_is_training
-    - field.field.node.session.field_organizers
-    - field.field.node.session.field_parent_event
+    - field.field.node.session.body
+    - field.field.node.session.field_accent_color
+    - field.field.node.session.field_event_mode
+    - field.field.node.session.field_location
     - field.field.node.session.field_person_speakers
-    - field.field.node.session.field_r
-    - field.field.node.session.field_session_category
-    - field.field.node.session.field_session_frames
-    - field.field.node.session.field_session_sponsors
+    - field.field.node.session.field_rsvp_url
+    - field.field.node.session.field_session_date
     - field.field.node.session.field_session_video
     - field.field.node.session.field_short_description
     - field.field.node.session.field_slides
     - field.field.node.session.field_social_media_card
-    - field.field.node.session.field_source_url
-    - field.field.node.session.field_speakers
-    - field.field.node.session.field_time_slot
-    - field.field.node.session.field_topics
     - image.style.thumbnail
     - node.type.session
-    - workflows.workflow.session_acceptance
   module:
-    - content_moderation
-    - field_group
     - file
-    - image
     - link
-    - maxlength
+    - smart_date
+    - svg_image
     - text
-third_party_settings:
-  field_group:
-    group_scheduling:
-      children:
-        - field_social_media_card
-        - moderation_state
-        - field_time_slot
-        - field_r
-      label: 'Admin Functions'
-      region: content
-      parent_name: ''
-      weight: 7
-      format_type: fieldset
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        description: ''
-        required_fields: true
-    group_session_metadata:
-      children:
-        - field_audience
-        - field_session_category
-        - field_speakers
-      label: 'Session Metadata'
-      region: content
-      parent_name: ''
-      weight: 6
-      format_type: fieldset
-      format_settings:
-        classes: ''
-        id: ''
-        description: ''
-        required_fields: true
-_core:
-  default_config_hash: etdMd_dhF4lYpVFuY8sKBdr4-6A4z8Nt2yUM8H5p3wU
 id: node.session.default
 targetEntityType: node
 bundle: session
 mode: default
 content:
-  field_audience:
-    type: options_select
-    weight: 7
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_description:
-    type: text_textarea
-    weight: 4
+  body:
+    type: text_textarea_with_summary
+    weight: 5
     region: content
     settings:
       rows: 5
+      summary_rows: 3
       placeholder: ''
+      show_summary: false
     third_party_settings: {  }
-  field_event:
-    type: entity_reference_autocomplete
-    weight: 9
+  field_accent_color:
+    type: string_textfield
+    weight: 11
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      size: 9
+      placeholder: '#6c5cc4'
     third_party_settings: {  }
-  field_is_non_session:
-    type: boolean_checkbox
+  field_event_mode:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_location:
+    type: string_textfield
     weight: 3
     region: content
     settings:
-      display_label: true
-    third_party_settings: {  }
-  field_is_training:
-    type: boolean_checkbox
-    weight: 2
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
-  field_organizers:
-    type: entity_reference_autocomplete
-    weight: 13
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
       size: 60
-      placeholder: ''
+      placeholder: 'Leave empty for online meetings'
     third_party_settings: {  }
   field_person_speakers:
     type: entity_reference_autocomplete
-    weight: 12
+    weight: 7
     region: content
     settings:
       match_operator: CONTAINS
@@ -133,41 +69,37 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_r:
-    type: options_select
-    weight: 20
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_session_category:
-    type: options_select
+  field_rsvp_url:
+    type: link_default
     weight: 8
     region: content
-    settings: {  }
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
-  field_session_frames:
-    type: entity_reference_autocomplete
-    weight: 15
+  field_session_date:
+    type: smartdate_inline
+    weight: 1
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_session_sponsors:
-    type: entity_reference_autocomplete
-    weight: 18
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      modal: false
+      default_duration: 90
+      default_duration_increments: |-
+        30
+        60|1 hour
+        90|1.5 hours
+        120|2 hours
+        custom
+      show_extra: false
+      hide_date: true
+      allday: true
+      remove_seconds: false
+      duration_overlay: true
+      separator: to
     third_party_settings: {  }
   field_session_video:
     type: entity_reference_autocomplete
-    weight: 1
+    weight: 4
     region: content
     settings:
       match_operator: CONTAINS
@@ -177,7 +109,7 @@ content:
     third_party_settings: {  }
   field_short_description:
     type: string_textarea
-    weight: 5
+    weight: 6
     region: content
     settings:
       rows: 5
@@ -189,58 +121,18 @@ content:
         maxlength_js_enforce: true
   field_slides:
     type: file_generic
-    weight: 16
+    weight: 9
     region: content
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
   field_social_media_card:
     type: image_image
-    weight: 17
+    weight: 10
     region: content
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
-    third_party_settings: {  }
-  field_source_url:
-    type: link_default
-    weight: 17
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-  field_speakers:
-    type: entity_reference_autocomplete_tags
-    weight: 9
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_time_slot:
-    type: options_select
-    weight: 19
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_topics:
-    type: entity_reference_autocomplete
-    weight: 14
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  moderation_state:
-    type: moderation_state_default
-    weight: 18
-    region: content
-    settings: {  }
     third_party_settings: {  }
   simple_sitemap:
     weight: 11
@@ -249,7 +141,7 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 8
+    weight: 5
     region: content
     settings:
       display_label: true
@@ -264,7 +156,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 10
+    weight: 6
     region: content
     settings:
       match_operator: CONTAINS
@@ -272,10 +164,18 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  url_redirects:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
-  field_parent_event: true
+  moderation_state: true
   path: true
   promote: true
-  revision_log: true
+  publish_on: true
+  publish_state: true
   sticky: true
+  unpublish_on: true
+  unpublish_state: true

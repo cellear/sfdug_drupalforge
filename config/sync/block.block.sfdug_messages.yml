@@ -1,0 +1,20 @@
+uuid: 46a6f557-bf49-436f-a34a-77567c0633a3
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - sfdug
+id: sfdug_messages
+theme: sfdug
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  label_display: '0'
+  provider: system
+visibility: {  }

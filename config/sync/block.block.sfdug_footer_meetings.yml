@@ -1,0 +1,25 @@
+uuid: 4d822737-b487-41d5-8fe3-59f87597fa00
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer-meetings
+  module:
+    - system
+  theme:
+    - sfdug
+id: sfdug_footer_meetings
+theme: sfdug
+region: footer_second
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer-meetings'
+settings:
+  id: system_menu_block_footer-meetings
+  label: Meetings
+  label_display: visible
+  provider: system
+  level: 1
+  depth: null
+  expand_all_items: false
+visibility: {  }

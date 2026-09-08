@@ -1,0 +1,62 @@
+uuid: 103593d6-00f5-45e9-a208-a0a853f28c3e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.featured
+    - field.field.node.session.body
+    - field.field.node.session.field_accent_color
+    - field.field.node.session.field_person_speakers
+    - field.field.node.session.field_session_date
+    - field.field.node.session.field_session_video
+    - field.field.node.session.field_short_description
+    - field.field.node.session.field_slides
+    - field.field.node.session.field_social_media_card
+    - node.type.session
+  module:
+    - text
+id: node.session.featured
+targetEntityType: node
+bundle: session
+mode: featured
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+hidden:
+  changed: true
+  default_langcode: true
+  field_accent_color: true
+  field_event_mode: true
+  field_location: true
+  field_person_speakers: true
+  field_rsvp_url: true
+  field_session_date: true
+  field_session_video: true
+  field_short_description: true
+  field_slides: true
+  field_social_media_card: true
+  links: true
+  metatag: true
+  nid: true
+  path: true
+  promote: true
+  revision_default: true
+  revision_log: true
+  revision_timestamp: true
+  revision_translation_affected: true
+  revision_uid: true
+  status: true
+  sticky: true
+  type: true
+  uuid: true
+  vid: true
