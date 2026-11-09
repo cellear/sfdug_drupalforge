@@ -1,5 +1,4 @@
 _core:
-  comment: 0
   default_config_hash: 4GIX5Esnc_umpXUBj4IIocRX7Mt5fPhm4AgXfE3E56E
 module:
   announcements_feed: 0
@@ -14,6 +13,7 @@ module:
   captcha: 0
   ckeditor5: 0
   coffee: 0
+  comment: 0
   config: 0
   content_moderation: 0
   contextual: 0
