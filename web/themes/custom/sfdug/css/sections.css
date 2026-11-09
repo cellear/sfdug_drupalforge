@@ -908,6 +908,120 @@
   color: var(--accent-strong);
 }
 
+/* Discussion on talk companion pages. Core comment markup (stable9: the article carries only .js-comment), kept
+   quiet and phone-sized: people open these pages from a QR code mid-talk. */
+.session-full__discussion .js-comment {
+  padding: 18px 0 4px;
+  border-top: 1px solid var(--hairline);
+}
+
+.session-full__discussion .js-comment footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 12px;
+  margin: 0 0 6px;
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+
+.session-full__discussion .js-comment footer p {
+  margin: 0;
+}
+
+/* No avatars and no auto-generated subject lines: name, date, text. */
+.session-full__discussion .js-comment footer article,
+.session-full__discussion .js-comment > div > h3 {
+  display: none;
+}
+
+.session-full__discussion .js-comment footer a,
+.session-full__discussion .links a {
+  color: var(--purple-mid);
+}
+
+.session-full__discussion .js-comment > div > p {
+  margin: 0 0 10px;
+}
+
+.session-full__discussion .indented {
+  margin-left: 14px;
+  padding-left: 14px;
+  border-left: 2px solid var(--gold-border);
+}
+
+.session-full__discussion .links.inline {
+  display: flex;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9375rem;
+}
+
+/* Core prints the form heading as a bare <h2>. */
+.session-full__discussion h2 {
+  margin: 28px 0 12px;
+  font-size: var(--fs-lead);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--accent-strong);
+}
+
+.session-full__discussion .comment-form .form-item {
+  margin: 0 0 14px;
+}
+
+.session-full__discussion .comment-form label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.9375rem;
+  font-weight: 700;
+}
+
+.session-full__discussion .comment-form input[type="text"],
+.session-full__discussion .comment-form input[type="email"],
+.session-full__discussion .comment-form input[type="url"],
+.session-full__discussion .comment-form textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 10px 12px;
+  font: inherit;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+}
+
+.session-full__discussion .comment-form textarea {
+  min-height: 7em;
+}
+
+.session-full__discussion .comment-form .description,
+.session-full__discussion .comment-form .filter-wrapper {
+  display: none;
+}
+
+.session-full__discussion .comment-form .form-submit {
+  padding: 12px 22px;
+  font: inherit;
+  font-weight: 700;
+  color: #fff;
+  background: var(--purple);
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.session-full__discussion .comment-form .form-submit:hover {
+  background: var(--purple-hover);
+}
+
+.session-full__discussion .comment-form .form-submit:focus-visible {
+  outline: 3px solid var(--purple-mid);
+  outline-offset: 3px;
+}
+
 /* Views listings reuse the card grid. */
 .view-content .grid-3,
 .view-content .grid-2 {

@@ -15,3 +15,4 @@ form_settings:
   feedback_contact_message_form: false
   _contact_message_form: false
   comment_comment_form: true
+  comment_meeting_comment_form: true

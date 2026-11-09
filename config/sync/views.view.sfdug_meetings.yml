@@ -11,6 +11,7 @@ dependencies:
     - node.type.session
   module:
     - node
+    - options
     - smart_date
     - user
 id: sfdug_meetings
@@ -96,6 +97,15 @@ display:
           operator: in
           value:
             session: session
+          group: 1
+        field_event_value:
+          id: field_event_value
+          table: node__field_event
+          field: field_event_value
+          plugin_id: list_field
+          operator: or
+          value:
+            sfdug: sfdug
           group: 1
       style:
         type: default
@@ -189,6 +199,15 @@ display:
             min: ''
             max: ''
             value: ''
+          group: 1
+        field_event_value:
+          id: field_event_value
+          table: node__field_event
+          field: field_event_value
+          plugin_id: list_field
+          operator: or
+          value:
+            sfdug: sfdug
           group: 1
       filter_groups:
         operator: AND
@@ -336,6 +355,15 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+        field_event_value:
+          id: field_event_value
+          table: node__field_event
+          field: field_event_value
+          plugin_id: list_field
+          operator: or
+          value:
+            sfdug: sfdug
+          group: 1
       filter_groups:
         operator: AND
         groups:
@@ -465,6 +493,15 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+        field_event_value:
+          id: field_event_value
+          table: node__field_event
+          field: field_event_value
+          plugin_id: list_field
+          operator: or
+          value:
+            sfdug: sfdug
+          group: 1
       filter_groups:
         operator: AND
         groups:
@@ -602,6 +639,15 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+        field_event_value:
+          id: field_event_value
+          table: node__field_event
+          field: field_event_value
+          plugin_id: list_field
+          operator: or
+          value:
+            sfdug: sfdug
+          group: 1
       filter_groups:
         operator: AND
         groups:
@@ -731,6 +777,15 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+        field_event_value:
+          id: field_event_value
+          table: node__field_event
+          field: field_event_value
+          plugin_id: list_field
+          operator: or
+          value:
+            sfdug: sfdug
+          group: 1
       filter_groups:
         operator: AND
         groups:
@@ -829,6 +884,15 @@ display:
             max: ''
             value: ''
           group: 1
+        field_event_value:
+          id: field_event_value
+          table: node__field_event
+          field: field_event_value
+          plugin_id: list_field
+          operator: or
+          value:
+            sfdug: sfdug
+          group: 1
       filter_groups:
         operator: AND
         groups:
@@ -924,6 +988,15 @@ display:
             max: ''
             value: now
             type: offset
+          group: 1
+        field_event_value:
+          id: field_event_value
+          table: node__field_event
+          field: field_event_value
+          plugin_id: list_field
+          operator: or
+          value:
+            sfdug: sfdug
           group: 1
       filter_groups:
         operator: AND
@@ -1024,6 +1097,15 @@ display:
             max: ''
             value: now
             type: offset
+          group: 1
+        field_event_value:
+          id: field_event_value
+          table: node__field_event
+          field: field_event_value
+          plugin_id: list_field
+          operator: or
+          value:
+            sfdug: sfdug
           group: 1
       filter_groups:
         operator: AND

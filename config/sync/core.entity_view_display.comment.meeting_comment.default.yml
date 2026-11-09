@@ -1,0 +1,27 @@
+uuid: eebe4bb3-9c7c-4516-90df-1723ac9adb9e
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.meeting_comment
+    - field.field.comment.meeting_comment.comment_body
+  module:
+    - text
+id: comment.meeting_comment.default
+targetEntityType: comment
+bundle: meeting_comment
+mode: default
+content:
+  comment_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

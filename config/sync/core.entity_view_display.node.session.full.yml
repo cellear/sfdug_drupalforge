@@ -3,10 +3,16 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.meeting_comment.default
     - core.entity_view_mode.node.full
     - field.field.node.session.body
     - field.field.node.session.field_accent_color
+    - field.field.node.session.field_discussion
+    - field.field.node.session.field_event
+    - field.field.node.session.field_event_mode
+    - field.field.node.session.field_location
     - field.field.node.session.field_person_speakers
+    - field.field.node.session.field_rsvp_url
     - field.field.node.session.field_session_date
     - field.field.node.session.field_session_video
     - field.field.node.session.field_short_description
@@ -14,8 +20,10 @@ dependencies:
     - field.field.node.session.field_social_media_card
     - node.type.session
   module:
+    - comment
     - file
     - text
+    - user
 id: node.session.full
 targetEntityType: node
 bundle: session
@@ -32,6 +40,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: -20
+    region: content
+  field_discussion:
+    type: comment_default
+    label: hidden
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 3
     region: content
   field_session_video:
     type: entity_reference_entity_view
@@ -54,6 +71,7 @@ hidden:
   changed: true
   default_langcode: true
   field_accent_color: true
+  field_event: true
   field_event_mode: true
   field_location: true
   field_person_speakers: true

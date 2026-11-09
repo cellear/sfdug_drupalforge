@@ -1,0 +1,23 @@
+uuid: 6f794ded-f4d8-4c7f-ab97-b5e9a02321bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event
+    - node.type.session
+  module:
+    - options
+id: node.session.field_event
+field_name: field_event
+entity_type: node
+bundle: session
+label: Event
+description: 'Which event this talk belongs to. Only SFDUG meetings appear in the meeting listings and the home page hero; everything appears in the video archive.'
+required: true
+translatable: true
+default_value:
+  -
+    value: sfdug
+default_value_callback: ''
+settings: {  }
+field_type: list_string

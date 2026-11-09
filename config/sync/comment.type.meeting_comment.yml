@@ -1,0 +1,8 @@
+uuid: 2392561b-8d24-4864-b8b5-aeefed7b27ac
+langcode: en
+status: true
+dependencies: {  }
+id: meeting_comment
+label: Discussion
+target_entity_type_id: node
+description: 'Moderated discussion attached to a Meeting page.'

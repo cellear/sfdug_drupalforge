@@ -60,11 +60,22 @@
         </div>
       {% endif %}
 
+      {# Discussion: only rendered when the Meeting's comments are open or
+         closed-with-comments; hidden Meetings output nothing here. #}
+      {% if content.field_discussion|render %}
+        <div class="session-full__section session-full__discussion" id="discussion">
+          <h3>{{ 'Discussion'|t }}</h3>
+          {{ content.field_discussion }}
+        </div>
+      {% endif %}
+
       {{ content|without(
         'body',
         'field_session_video',
         'field_person_speakers',
         'field_slides',
+        'field_discussion',
+        'field_event',
         'field_social_media_card',
         'field_short_description',
         'field_session_date',

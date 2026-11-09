@@ -1,0 +1,33 @@
+uuid: 13511a16-9299-4f7a-82b6-7c906ea82ed3
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_event
+field_name: field_event
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: sfdug
+      label: 'SFDUG meeting'
+    -
+      value: badcamp
+      label: BADCamp
+    -
+      value: drupalcon
+      label: DrupalCon
+    -
+      value: other
+      label: Other
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

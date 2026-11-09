@@ -25,6 +25,9 @@ function sfdug_next_session(): ?NodeInterface {
     ->accessCheck(TRUE)
     ->condition('type', 'session')
     ->condition('status', NodeInterface::PUBLISHED)
+    // Talks given elsewhere (BADCamp, DrupalCon) have Meeting pages too, but
+    // only SFDUG's own meetings skin the front page.
+    ->condition('field_event', 'sfdug')
     ->condition('field_session_date.end_value', $now, '>=')
     ->sort('field_session_date.value', 'ASC')
     ->range(0, 1)

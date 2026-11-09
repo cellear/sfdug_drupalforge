@@ -5,6 +5,7 @@ dependencies:
   module:
     - captcha
     - coffee
+    - comment
     - contextual
     - file
     - honeypot
@@ -22,11 +23,13 @@ is_admin: false
 permissions:
   - 'access administration pages'
   - 'access coffee'
+  - 'access comments'
   - 'access content'
   - 'access contextual links'
   - 'access navigation'
   - 'bypass honeypot protection'
   - 'delete own files'
+  - 'post comments'
   - 'skip CAPTCHA'
   - 'use klaro'
   - 'view media'

@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - comment
     - klaro
     - media
     - system
@@ -13,6 +14,8 @@ label: 'Anonymous user'
 weight: 0
 is_admin: false
 permissions:
+  - 'access comments'
   - 'access content'
+  - 'post comments'
   - 'use klaro'
   - 'view media'
